@@ -13,7 +13,6 @@ export default function useDataApi<TData = any>({ initUrl, defaultData }: UseDat
       setIsLoading(true);
       try {
         const result = await axios.get<TData>(initUrl);
-        console.log("result: ", result);
         if (mounted) {
           setData(result.data);
         }
